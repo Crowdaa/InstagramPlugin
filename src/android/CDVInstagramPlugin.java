@@ -43,8 +43,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v4.content.FileProvider;
 import android.util.Base64;
 import android.util.Log;
+
+import com.crowdaa.www.BuildConfig;
 
 @TargetApi(Build.VERSION_CODES.FROYO)
 public class CDVInstagramPlugin extends CordovaPlugin {
@@ -120,7 +123,7 @@ public class CDVInstagramPlugin extends CordovaPlugin {
         	
         	Intent shareIntent = new Intent(Intent.ACTION_SEND);
         	shareIntent.setType("image/*");
-        	shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+            shareIntent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this.webView.getContext().getApplicationContext(), BuildConfig.APPLICATION_ID + ".provider", file));
         	shareIntent.putExtra(Intent.EXTRA_TEXT, captionString);
         	shareIntent.setPackage("com.instagram.android");
         	

@@ -16,7 +16,7 @@
   </dependency>
 
   <js-module src="www/CDVInstagramPlugin.js" name="InstagramPlugin">
-        <clobbers target="Instagram" />
+        <clobbers target="cordova.plugins.Instagram" />
   </js-module>
 
   <engines>

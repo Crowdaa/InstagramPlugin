@@ -47,7 +47,7 @@ import android.support.v4.content.FileProvider;
 import android.util.Base64;
 import android.util.Log;
 
-import com.crowdaa.free.www.BuildConfig;
+import com.crowdaa.awax.www.BuildConfig;
 
 @TargetApi(Build.VERSION_CODES.FROYO)
 public class CDVInstagramPlugin extends CordovaPlugin {
